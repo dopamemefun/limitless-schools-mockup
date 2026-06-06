@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  var DESKTOP = window.matchMedia("(min-width: 861px)");
+  var DESKTOP = window.matchMedia("(min-width: 1025px)"); /* matches the CSS nav-collapse breakpoint */
 
   // --- Mobile menu (hamburger) toggle ---
   var toggle = document.querySelector(".menu-toggle");

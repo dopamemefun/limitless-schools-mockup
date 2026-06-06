@@ -108,6 +108,10 @@ nav.menu>ul{list-style:none;display:flex;align-items:center;gap:3px;margin:0;pad
 .submenu a:hover{background:var(--plum-050);color:var(--plum-700)}
 .submenu a .dot{width:9px;height:9px;color:var(--marigold);flex:none}
 .submenu a small{display:block;font-weight:600;color:var(--ink-soft);font-size:.8rem;margin-top:1px}
+/* "More" dropdown: right-aligned (it's the last nav item, so open leftward) + wraps long compliance links */
+.submenu--right{left:auto;right:0;max-width:340px}
+.submenu--right a{align-items:flex-start}
+.submenu--right .dot{margin-top:.4em}
 .nav-cta{display:flex;align-items:center;gap:10px;margin-left:6px}
 .menu-toggle{display:none;align-items:center;gap:9px;background:var(--paper);border:2px solid var(--line);border-radius:13px;
   min-height:48px;padding:9px 15px;font-family:var(--body);font-weight:800;color:var(--ink);cursor:pointer}
@@ -287,7 +291,7 @@ footer.site .brand img{height:46px}
 @media (max-width:980px){
   footer.site .top{grid-template-columns:1fr 1fr}
 }
-@media (max-width:860px){
+@media (max-width:1024px){ /* nav now has 6 top-level items — collapse earlier so it never overflows */
   .hero .wrap,.feature,.donate .inner,.split,.quote .wrap{grid-template-columns:1fr}
   .feature.reverse .feature-media{order:0}
   .hero-figure{order:-1}
