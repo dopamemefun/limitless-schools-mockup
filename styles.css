@@ -207,7 +207,7 @@ nav.menu>ul{list-style:none;display:flex;align-items:center;gap:3px;margin:0;pad
 .donate h2{color:#fff}
 .donate p{color:#dff1ef}
 .donate .gfm{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:var(--r-lg);padding:24px;text-align:center}
-.donate .gfm img{height:30px;margin:0 auto 14px;filter:brightness(0) invert(1);opacity:.95}
+.donate .gfm img{width:120px;height:auto;margin:0 auto 14px;filter:brightness(0) invert(1);opacity:.95}
 
 /* Forms */
 .form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(24px,4vw,40px);box-shadow:var(--shadow-sm)}
