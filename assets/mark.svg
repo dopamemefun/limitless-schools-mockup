@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Limitless Schools">
+  <title>Limitless Schools</title>
+  <!-- Rounded tile so the mark stays legible at favicon sizes -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#2f7d78"/>
+  <!-- Infinity loop = "limitless"; single friendly stroke, works in one colour -->
+  <path d="M32 33 C27 25 16 25 16 33 C16 41 27 41 32 33 C37 25 48 25 48 33 C48 41 37 41 32 33 Z"
+        fill="none" stroke="#fffdf9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Small spark, echoing the school's starburst; the one warm accent -->
+  <path d="M49 9.5 l1.8 5.1 l5.1 1.8 l-5.1 1.8 l-1.8 5.1 l-1.8 -5.1 l-5.1 -1.8 l5.1 -1.8 Z" fill="#f0a93f"/>
+</svg>

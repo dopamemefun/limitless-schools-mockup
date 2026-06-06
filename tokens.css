@@ -1,0 +1,135 @@
+/* ==========================================================================
+   tokens.css — calm, sensory-friendly design foundation
+   Adopted from the accessible-frontend skill and tuned to the Limitless brand
+   (muted teal + dusty plum + warm marigold). Saturation kept modest; contrast
+   verified (body ≥ 4.5:1, large text / UI ≥ 3:1). No pure #fff / #000.
+   ========================================================================== */
+
+:root {
+  /* --- Surfaces (no pure white) --- */
+  --color-bg:           #f7f3ea;   /* warm paper */
+  --color-surface:      #fffdf9;   /* cards / raised areas, off-white */
+  --color-surface-alt:  #efe9dc;   /* subtle section banding */
+  --color-border:       #e7ddcd;
+
+  /* --- Text (deep near-black, not #000) --- */
+  --color-text:         #232433;
+  --color-text-muted:   #585364;
+
+  /* --- Brand: primary (muted teal — restful, trustworthy) --- */
+  --color-primary:        #2f7d78;
+  --color-primary-hover:  #266a66;
+  --color-primary-deep:   #1f5551;  /* for teal TEXT/links on light (≥4.5:1) */
+  --color-primary-050:    #e6f1ef;  /* soft teal tint */
+  --color-on-primary:     #ffffff;
+
+  /* --- Brand: secondary (dusty plum — headings, depth) --- */
+  --color-secondary:      #7a4f78;
+  --color-secondary-deep: #4e3050;  /* heading ink */
+  --color-secondary-050:  #f1e9f0;
+
+  /* --- Brand: accent (warm marigold — ONE job: the primary action) --- */
+  --color-accent:         #d98b3a;
+  --color-accent-deep:    #a85f17;  /* accent TEXT on light */
+  --color-accent-050:     #fbeeda;
+  --color-on-accent:      #2a1c08;  /* dark ink on accent fills (≥6:1) */
+
+  --color-navy:           #20305f;  /* occasional deep accent / stars */
+
+  /* --- Status (always pair with icon + text) --- */
+  --color-success:      #2e7d52;
+  --color-warning:      #9a6a16;
+  --color-error:        #b23a3a;
+
+  /* --- Focus (high-visibility, distinct from brand) --- */
+  --color-focus:        #1f5fb0;
+
+  /* --- Typography: families (legibility first) --- */
+  --font-body:    "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif; /* one calm display face */
+
+  /* --- Typography: fluid scale --- */
+  --text-sm:   clamp(0.95rem, 0.92rem + 0.2vw, 1.05rem);
+  --text-base: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);   /* ≥18px floor */
+  --text-lg:   clamp(1.35rem, 1.2rem + 0.7vw, 1.6rem);
+  --text-xl:   clamp(1.7rem, 1.4rem + 1.4vw, 2.3rem);
+  --text-2xl:  clamp(2.1rem, 1.6rem + 2.4vw, 3.1rem);
+  --text-3xl:  clamp(2.5rem, 1.8rem + 3.2vw, 3.9rem);       /* hero h1 */
+
+  --leading-body:    1.6;
+  --leading-heading: 1.12;
+  --measure:         66ch;
+
+  /* --- Spacing scale (generous) --- */
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6.5rem;
+
+  /* --- Radius (soft, friendly) --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-pill: 999px;
+
+  /* --- Shadow (soft, low-contrast depth) --- */
+  --shadow-sm: 0 2px 6px rgba(37, 48, 58, 0.06);
+  --shadow-md: 0 10px 28px rgba(37, 48, 58, 0.09);
+  --shadow-lg: 0 24px 60px rgba(78, 48, 78, 0.14);
+
+  /* --- Motion (slow, gentle; honor reduced-motion below) --- */
+  --motion-fast: 180ms;
+  --motion-base: 300ms;
+  --motion-slow: 460ms;
+  --ease-soft:   cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* --- Layout --- */
+  --target-min:    44px;
+  --container-max: 1180px;
+}
+
+/* Sensible base styles built on the tokens */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: var(--leading-heading);
+  color: var(--color-secondary-deep);
+  text-wrap: balance;
+}
+
+a { color: var(--color-primary-deep); text-underline-offset: 3px; }
+a:hover { color: var(--color-primary-hover); }
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced-motion: the global guard. Keep content visible, strip movement. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
